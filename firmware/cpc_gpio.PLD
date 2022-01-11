@@ -1,0 +1,40 @@
+Name     Name ;
+PartNo   00 ;
+Date     1/11/2022 ;
+Revision 01 ;
+Designer Engineer ;
+Company  Nof for Sale ;
+Assembly None ;
+Location  ;
+Device   g16v8a;
+
+
+pin 1 = IORQ;
+pin 2 = A0;
+pin 3 = A1;
+pin 4 = A2;
+pin 5 = A7;
+pin 6 = A10;
+pin 7 = S0;
+pin 8 = S1;
+pin 9 = S2;
+pin 14 = WR;
+pin 15 = RD;
+
+pin 12 = DIN_CLK2;
+pin 13 = DIN_CLK1;
+pin 16 = !DIN_ENA2;
+pin 17 = DOUT_CLK2;
+pin 18 = !DIN_ENA1;
+pin 19 = DOUT_CLK1;
+
+SWITCH_OK = (A1 $ S0) # (A2 $ S1);
+ADDR_OK = A10 # !A7 # SWITCH_OK;
+DEC_1 = ADDR_OK # IORQ # A0;
+DEC_2 = ADDR_OK # IORQ # !A0;
+DIN_ENA1 = DEC_1 # RD;
+DIN_ENA2 = DEC_2 # RD;
+DIN_CLK1 = !DIN_ENA1;
+DIN_CLK2 = !DIN_ENA2;
+DOUT_CLK1 = (DEC_1 # WR);
+DOUT_CLK2 = (DEC_2 # WR);
