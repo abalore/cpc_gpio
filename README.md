@@ -6,12 +6,12 @@ The board interface is the MX4, so it requires a MX4 board or adapter to connect
 
 The DIP switches 1 and 2 allow to select 4 different I/O port address ranges for the Ports A and B, the DIP switch 3 is reserved for future use.
 
-DIP 1       DIP 2           Port A          Port B
-__________________________________________________
-OFF         OFF             &F880           &F881
-ON          OFF             &F882           &F883
-OFF         ON              &F884           &F885
-ON          ON              &F886           &F887
+|    DIP 1   |    DIP 2    |     Port A    |     Port B     |
+|------------|-------------|---------------|----------------|
+|    OFF     |    OFF      |      &F880    |      &F881     |
+|    ON      |    OFF      |      &F882    |      &F883     |
+|    OFF     |    ON       |      &F884    |      &F885     |
+|    ON      |    ON       |      &F886    |      &F887     |
 
 # Usage
 
